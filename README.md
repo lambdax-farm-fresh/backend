@@ -1,171 +1,145 @@
 # backend
 
-🚫 Note: All lines that start with 🚫 are instructions and should be deleted before this is posted to your portfolio. This is intended to be a guideline, feel free to add your own flare to it.
+🚫 Note: All lines that start with 🚫 are instructions and should be deleted before this is posted to your portfolio. This is intended to be a guideline. Feel free to add your own flare to it.
 
-🚫 The numbers 1️⃣ through 5️⃣ next to each item represent the week that part of the docs needs to be comepleted by.  Make sure to delete the numbers by the end of Labs.
+🚫 The numbers 1️⃣ through 3️⃣ next to each item represent the week that part of the docs needs to be comepleted by.  Make sure to delete the numbers by the end of Labs.
 
-🚫 Each student has a required minimum number of meaningful PRs each week per the rubric. Contributing to docs does NOT count as a PR to meet your weekly requirements.
+🚫 Each student has a required minimum number of meaningful PRs each week per the rubric.  Contributing to docs does NOT count as a PR to meet your weekly requirements.
 
-# 1️⃣ Title of project goes here
+# API Documentation
 
-1️⃣ You can find the deployed project at [🚫URL NAME GOES HERE](🚫copy and paste URL here).
+#### 1️⃣ Backend delpoyed at [🚫name service here](🚫add URL here) <br>
 
-## 4️⃣ Contributors
+## 1️⃣ Getting started
 
-🚫Add contributor info below, make sure add images and edit the social links for each member. Add to or delete these place-holders as needed
+To get the server running locally:
 
-|                                       [Student 1](https://github.com/)                                        |                                       [Student 2](https://github.com/)                                        |                                       [Student 3](https://github.com/)                                        |                                       [Student 4](https://github.com/)                                        |                                       [Student 5](https://github.com/)                                        |
-| :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
-|                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-female.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-female.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |
-|                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/honda0306)             |           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Mister-Corn)            |          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/NandoTheessen)           |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/wvandolah)             |
-| [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) |
+🚫 adjust these scripts to match your project
 
-<br>
-<br>
+- Clone this repo
+- **yarn install** to install all required dependencies
+- **yarn server** to start the local server
+- **yarn test** to start server using testing environment
 
-🚫 4️⃣ Optional examples of using images with links for your tech stack, make sure to change these to fit your project
-
-![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
-![React](https://img.shields.io/badge/react-v16.7.0--alpha.2-blue.svg)
-![Typescript](https://img.shields.io/npm/types/typescript.svg?style=flat)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b5c4db1c-b10d-42c3-b157-3746edd9e81d/deploy-status)](netlify link goes in these parenthesis)
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-
-🚫 more info on using badges [here](https://github.com/badges/shields)
-
-## Project Overview
-
-1️⃣ [Trello Board](🚫add link to trello board here)
-
-1️⃣ [Product Canvas](🚫add link to product canvas here)
-
-1️⃣ [UX Design files](🚫add link to design files here) - 🚫 delete if not applicable
-
-🚫 Replace lorem ipsum with a description of your project
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-
-### 4️⃣ Key Features
-
--    feature one
--    feature two
--    feature three
--    feature four
--    feature five
-
-## 1️⃣ Tech Stack
-
-### Front end built using:
-
-#### _Front end framework goes here_
+### Backend framework goes here
 
 🚫 Why did you choose this framework?
 
--    point one
--    point two
--    point three
--    point four
+-    Point One
+-    Point Two
+-    Point Three
+-    Point Four
 
-🚫List the rest of the front end features and libraries in the same format as the framework above.
+## 2️⃣ Endpoints
 
-#### Front end deployed to `🚫insert service here`
+🚫This is a placeholder, replace the endpoints, access controll, and descriptioin to match your project
 
-#### [Back end](🚫link to back end repo here) built using:
+#### Organization Routes
 
-#### 🚫 back end framework goes here
+| Method | Endpoint                | Access Control | Description                                  |
+| ------ | ----------------------- | -------------- | -------------------------------------------- |
+| GET    | `/organizations/:orgId` | all users      | Returns the information for an organization. |
+| PUT    | `/organizatoins/:orgId` | owners         | Modify an existing organization.             |
+| DELETE | `/organizations/:orgId` | owners         | Delete an organization.                      |
 
--    point one
--    point two
--    point three
+#### User Routes
 
-🚫 List the rest of the back end end features and libraries in the same format as the framework above
+| Method | Endpoint                | Access Control      | Description                                        |
+| ------ | ----------------------- | ------------------- | -------------------------------------------------- |
+| GET    | `/users/current`        | all users           | Returns info for the logged in user.               |
+| GET    | `/users/org/:userId`    | owners, supervisors | Returns all users for an organization.             |
+| GET    | `/users/:userId`        | owners, supervisors | Returns info for a single user.                    |
+| POST   | `/users/register/owner` | none                | Creates a new user as owner of a new organization. |
+| PUT    | `/users/:userId`        | owners, supervisors |                                                    |
+| DELETE | `/users/:userId`        | owners, supervisors |                                                    |
 
-# APIs
+# Data Model
 
-## 2️⃣ Authentication API here
+🚫This is just an example. Replace this with your data model
 
-🚫Replace text below with a description of the API
+#### 2️⃣ ORGANIZATIONS
 
-Water's like me. It's laaazy ... Boy, it always looks for the easiest way to do things A little happy sunlight shining through there. Let all these little things happen. Don't fight them. Learn to use them. Even the worst thing we can do here is good.
+---
 
-## 2️⃣ Payment API here
+```
+{
+  id: UUID
+  name: STRING
+  industry: STRING
+  paid: BOOLEAN
+  customer_id: STRING
+  subscription_id: STRING
+}
+```
 
-🚫Replace text below with a description of the API
+#### USERS
 
-This is the way you take out your flustrations. Get away from those little Christmas tree things we used to make in school. Isn't it fantastic that you can change your mind and create all these happy things? Everything's not great in life, but we can still find beauty in it.
+---
 
-## 3️⃣ Misc API here
+```
+{
+  id: UUID
+  organization_id: UUID foreign key in ORGANIZATIONS table
+  first_name: STRING
+  last_name: STRING
+  role: STRING [ 'owner', 'supervisor', 'employee' ]
+  email: STRING
+  phone: STRING
+  cal_visit: BOOLEAN
+  emp_visit: BOOLEAN
+  emailpref: BOOLEAN
+  phonepref: BOOLEAN
+}
+```
 
-🚫Replace text below with a description of the API
+## 2️⃣ Actions
 
-You can do anything your heart can imagine. In life you need colors. This is where you take out all your hostilities and frustrations. It's better than kicking the puppy dog around and all that so. I'm sort of a softy, I couldn't shoot Bambi except with a camera. Trees get lonely too, so we'll give him a little friend. We'll lay all these little funky little things in there.
+🚫 This is an example, replace this with the actions that pertain to your backend
 
-## 3️⃣ Misc API here
+`getOrgs()` -> Returns all organizations
 
-🚫Replace text below with a description of the API
+`getOrg(orgId)` -> Returns a single organization by ID
 
-When you do it your way you can go anywhere you choose. Let your heart take you to wherever you want to be. If I paint something, I don't want to have to explain what it is. A tree needs to be your friend if you're going to paint him. That's a son of a gun of a cloud. Even the worst thing we can do here is good.
+`addOrg(org)` -> Returns the created org
 
-## 3️⃣ Misc API here
+`updateOrg(orgId)` -> Update an organization by ID
 
-🚫Replace text below with a description of the API
+`deleteOrg(orgId)` -> Delete an organization by ID
+<br>
+<br>
+<br>
+`getUsers(orgId)` -> if no param all users
 
-Volunteering your time; it pays you and your whole community fantastic dividends. Maybe there's a happy little waterfall happening over here. You can spend all day playing with mountains. We don't have to be committed. We are just playing here. You have freedom here. The only guide is your heart. It's cold, but it's beautiful.
+`getUser(userId)` -> Returns a single user by user ID
 
-# 3️⃣ Environment Variables
+`addUser(user object)` --> Creates a new user and returns that user. Also creates 7 availabilities defaulted to hours of operation for their organization.
 
-In order for the app to function correctly, the user must set up their own environment variables. There should be a .env file containing the following:
+`updateUser(userId, changes object)` -> Updates a single user by ID.
 
-🚫These are just examples, replace them with the specifics for your app
+`deleteUser(userId)` -> deletes everything dependent on the user
 
-    *  REACT_APP_apiKey - this is your Google API key, which can be generated in the Google Cloud Console
-    *  REACT_APP_authDomain - when you set up your Firebase project, this information will be in the dashboard
-    *  REACT_APP_databaseURL - in the Firebase dashboard
-    *  REACT_APP_projectID - in the Firebase dashboard
-    *  REACT_APP_storageBucket - in the Firebase dashboard
-    *  REACT_APP_messagingSenderId - in the Firebase dashboard
-    *  REACT_APP_stripe_API - this is your public Stripe API key, generated in the Stripe dashboard
-    *  REACT_APP_backendURL - optional for your local development server
-    *  REACT_APP_clientid - this is the Stripe_connect clientID, generated in Stripe_connect settings
-    *  REACT_APP_stripe_plan - this is the ID for a second Stripe subscription plan, generated under Stripe products
+## 3️⃣ Environment Variables
 
-# 5️⃣ Content Licenses
+In order for the app to function correctly, the user must set up their own environment variables.
 
-🚫For all content - images, icons, etc, use this table to document permission of use. Remove the two placeholders and add you content to this table
+create a .env file that includes the following:
 
-| Image Filename | Source / Creator | License                                                                      |
-| -------------- | ---------------- | ---------------------------------------------------------------------------- |
-| doodles.png    | Nicole Bennett   | [Creative Commons](https://www.toptal.com/designers/subtlepatterns/doodles/) |
-| rings.svg      | Sam Herbert      | [MIT](https://github.com/SamHerbert/SVG-Loaders)                             |
-
-# 4️⃣ Testing
-
-🚫Document what you used for testing and why
-
-# 4️⃣ Installation Instructions
-
-🚫explain how to install the required dependencies to get this project up and running with yarn and NPM
-
-## Other Scripts
-
-🚫replace these examples with your own
-
-    * typecheck - runs the TypeScript compiler
-    * build - creates a build of the application
-    * start - starts the production server after a build is created
-    * test - runs tests in **tests** directory \* eject - copy the configuration files and dependencies into the project so you have full control over them
-
-# Contributing
+🚫 These are just examples, replace them with the specifics for your app
+    
+    *  STAGING_DB - optional development db for using functionality not available in SQLite
+    *  NODE_ENV - set to "development" until ready for "production"
+    *  JWT_SECRET - you can generate this by using a python shell and running import random''.join([random.SystemRandom().choice('abcdefghijklmnopqrstuvwxyz0123456789!@#\$%^&amp;*(-*=+)') for i in range(50)])
+    *  SENDGRID_API_KEY - this is generated in your Sendgrid account
+    *  stripe_secret - this is generated in the Stripe dashboard
+    
+## Contributing
 
 When contributing to this repository, please first discuss the change you wish to make via issue, email, or any other method with the owners of this repository before making a change.
 
-Please note we have a [code of conduct](./CODE_OF_CONDUCT.md). Please follow it in all your interactions with the project.
+Please note we have a [code of conduct](./code_of_conduct.md). Please follow it in all your interactions with the project.
 
-## Issue/Bug Request
-   
+### Issue/Bug Request
+
  **If you are having an issue with the existing project code, please submit a bug report under the following guidelines:**
  - Check first to see if your issue has already been reported.
  - Check to see if the issue has recently been fixed by attempting to reproduce the issue using the latest master branch in the repository.
@@ -196,4 +170,5 @@ These contribution guidelines have been adapted from [this good-Contributing.md-
 
 ## Documentation
 
-See [Backend Documentation](🚫_link to your backend readme here_) for details on the backend of our project.
+See [Frontend Documentation](🚫link to your frontend readme here) for details on the fronend of our project.
+🚫 Add DS iOS and/or Andriod links here if applicable.
