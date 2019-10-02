@@ -1,4 +1,5 @@
 const express = require("express");
+var cors = require("cors");
 
 // Creates express app
 const app = express();
@@ -13,6 +14,7 @@ app.use(
     extended: true
   })
 );
+app.use(cors());
 
 // Root url
 app.get("/", (req, res) => {
