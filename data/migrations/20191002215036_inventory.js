@@ -19,10 +19,10 @@ exports.up = function(knex) {
       .references("itemId")
       .inTable("items")
       .onDelete("CASCADE");
-    i.integer("unitId");
-    i.decimal("quantity");
-    i.decimal("price");
-    i.text("description", 255);
+    i.integer("unitId").notNullable();
+    i.decimal("quantity").notNullable();
+    i.decimal("price").notNullable();
+    i.text("description", 255).defaultTo("");
   });
 };
 
