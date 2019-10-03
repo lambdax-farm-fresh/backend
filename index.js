@@ -5,6 +5,11 @@ var cors = require("cors");
 const app = express();
 const bodyParser = require("body-parser");
 
+// Routes
+
+var usersRouter = require('./routes/user');
+var authRouter = require('./routes/auth');
+
 const port = 3000;
 
 // MIDDLEWARE
@@ -15,6 +20,11 @@ app.use(
   })
 );
 app.use(cors());
+
+//Routes
+
+app.use('/users', usersRouter);
+app.use('/auth', authRouter);
 
 // Root url
 app.get("/", (req, res) => {
