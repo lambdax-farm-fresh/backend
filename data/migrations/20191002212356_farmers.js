@@ -3,6 +3,7 @@ exports.up = function(knex) {
     f.increments("farmerId");
     f.integer("userId")
       .unsigned()
+      .notNullable()
       .references("id")
       .inTable("users")
       .onDelete("CASCADE");
