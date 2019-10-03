@@ -1,56 +1,54 @@
-// Update with your config settings.
+require("dotenv").config();
+DATABASE_URL = process.env.DATABASE_URL;
+DB_PASS = process.env.DB_PASS;
+DB_USER = process.env.DB_USER;
 
 module.exports = {
-
   development: {
-    client: 'sqlite3',
+    client: "sqlite3",
     connection: {
-      filename: './dev.sqlite3'
+      filename: "./data/farmfreshdev.sqlite3"
     },
     migrations: {
-      directory: './data/migrations'
+      directory: "./data/migrations"
     },
     seeds: {
-      directory: './data/seeds'
-    }
+      directory: "./data/seeds"
+    },
+    useNullAsDefault: true
   },
 
   staging: {
-    client: 'postgresql',
+    client: "postgresql",
     connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
+      database: "my_db",
+      user: "username",
+      password: "password"
     },
     pool: {
       min: 2,
       max: 10
     },
     migrations: {
-      directory: './data/migrations'
+      directory: "./data/migrations"
     },
     seeds: {
-      directory: './data/seeds'
+      directory: "./data/seeds"
     }
   },
 
   production: {
-    client: 'postgresql',
-    connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
-    },
+    client: "postgresql",
+    connection: DATABASE_URL,
     pool: {
       min: 2,
       max: 10
     },
     migrations: {
-      directory: './data/migrations'
+      directory: "./data/migrations"
     },
     seeds: {
-      directory: './data/seeds'
+      directory: "./data/seeds"
     }
   }
-
 };
