@@ -6,19 +6,22 @@ exports.up = function(knex) {
       .notNullable()
       .references("farmerId")
       .inTable("farmers")
-      .onDelete("CASCADE");
+      .onDelete("CASCADE")
+      .onUpdate("CASCADE");
     i.integer("locationId")
       .unsigned()
       .notNullable()
       .references("locationId")
       .inTable("locations")
-      .onDelete("CASCADE");
+      .onDelete("CASCADE")
+      .onUpdate("CASCADE");
     i.integer("itemId")
       .unsigned()
       .notNullable()
       .references("itemId")
       .inTable("items")
-      .onDelete("CASCADE");
+      .onDelete("CASCADE")
+      .onUpdate("CASCADE");
     i.integer("unitId").notNullable();
     i.decimal("quantity").notNullable();
     i.decimal("price").notNullable();

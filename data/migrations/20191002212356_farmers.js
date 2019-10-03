@@ -6,7 +6,8 @@ exports.up = function(knex) {
       .notNullable()
       .references("id")
       .inTable("users")
-      .onDelete("CASCADE");
+      .onDelete("CASCADE")
+      .onUpdate("CASCADE");
     f.string("farmName").notNullable();
   });
 };
