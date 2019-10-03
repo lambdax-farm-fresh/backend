@@ -60,4 +60,6 @@ typings/
 # next.js build output
 .next
 
-./data/farmfreshdev.sqlite3
+#SQLite3 DB file for development (hidden to prevent conflicts/PROD on PG)
+
+data/farmfreshdev.sqlite3
