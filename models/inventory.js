@@ -41,6 +41,6 @@ async function deleteInventory(inventory_id){
 
 function findById(id) {
   return db('inventories')
-    .where({ id })
+    .where('inventoryId', id)
     .first();
 }

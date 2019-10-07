@@ -41,6 +41,6 @@ async function deleteFarm(farm_id){
 
 function findById(id) {
   return db('farms')
-    .where({ id })
+    .where('farmerId', id)
     .first();
 }
