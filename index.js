@@ -9,6 +9,8 @@ const bodyParser = require("body-parser");
 
 var usersRouter = require('./routes/user');
 var authRouter = require('./routes/auth');
+var farmRouter = require('./routes/farms');
+var inventoryRouter = require('./routes/inventory');
 
 const port = 3000;
 
@@ -25,6 +27,8 @@ app.use(cors());
 
 app.use('/users', usersRouter);
 app.use('/auth', authRouter);
+app.use('/farms', farmRouter);
+app.use('/inventories', inventoryRouter);
 
 // Root url
 app.get("/", (req, res) => {
