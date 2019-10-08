@@ -12,7 +12,7 @@ exports.up = function(knex) {
         u.integer("farmerId")
             .unsigned()
             .notNullable()
-            .references("farmerId")
+            .references("id")
             .inTable("farmers")
             .onDelete("CASCADE")
             .onUpdate("CASCADE");
