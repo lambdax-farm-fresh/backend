@@ -7,8 +7,7 @@ const bodyParser = require("body-parser");
 
 // Routes
 
-var usersRouter = require('./routes/user');
-var authRouter = require('./routes/auth');
+var indexRouter = require('./routes/index');
 
 const port = 3000;
 
@@ -23,8 +22,7 @@ app.use(cors());
 
 //Routes
 
-app.use('/users', usersRouter);
-app.use('/auth', authRouter);
+app.use('/', indexRouter);
 
 // Root url
 app.get("/", (req, res) => {

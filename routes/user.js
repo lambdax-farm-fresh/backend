@@ -9,7 +9,7 @@ const User = require('../models/user');
 /* GET user by id */
 router.get('/:id', async function(req, res, next) {
     try {
-        const users = await User.findByUserId(req.params.id);
+        const users = await User.findById(req.params.id);
     
         res.json(users);
         

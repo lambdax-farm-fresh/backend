@@ -1,3 +1,4 @@
+// WILL BE UPDATED / REPLACED BY FIREBASE AUTH
 var express = require('express');
 var router = express.Router();
 
