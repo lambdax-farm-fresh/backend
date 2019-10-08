@@ -8,6 +8,10 @@ const auth = require('./auth');
 
 router.use('/users', users);
 router.use('/farms', farms);
-router.use('/', auth)
+router.use('/auth', auth)
+
+router.get("/", (req, res) => {
+    res.send("🏃🏃🏃 Server is running.");
+  });
 
 module.exports = router;

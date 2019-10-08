@@ -24,10 +24,6 @@ app.use(cors());
 
 app.use('/', indexRouter);
 
-// Root url
-app.get("/", (req, res) => {
-  res.send("🏃🏃🏃 Server is running.");
-});
 
 app.listen(port, () => {
   console.log(`👂👂👂 App is listening on port ${port}.`);
