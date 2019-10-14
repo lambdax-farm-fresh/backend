@@ -6,6 +6,8 @@ const Joi = require('@hapi/joi');
 
 const bcrypt = require('bcrypt');
 
+const authware = require('../middleware/auth');
+
 const Users = require('../models/user');
 
 router.post('/register', async (req, res) => {
@@ -42,17 +44,17 @@ router.post('/register', async (req, res) => {
 });
   
 router.post('/login', (req, res) => {
-    let { username, password } = req.body;
+    let { email, uid } = req.body;
   
-    Users.findBy({ username })
+    Users.findBy({ email })
       .first()
       .then(user => {
-        if (user && bcrypt.compareSync(password, user.password)) {
+        if (user && bcrypt.compareSync(email, user.email)) {
           const token = authware.generateToken(user); // new
           if(token){
           res.status(200).json({
-            curid: user.id,
-            curusername: user.username,
+            curFirebaseId: user.firebaseId,
+            curEmail: user.email,
             token
           });
         } else {
