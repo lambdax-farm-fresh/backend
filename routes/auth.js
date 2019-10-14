@@ -49,7 +49,7 @@ router.post('/login', (req, res) => {
     Users.findBy({ email })
       .first()
       .then(user => {
-        if (user && bcrypt.compareSync(email, user.email)) {
+        if (user && bcrypt.compareSync(uid, user.firebaseId)) {
           const token = authware.generateToken(user); // new
           if(token){
           res.status(200).json({
