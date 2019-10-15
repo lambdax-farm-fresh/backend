@@ -1,11 +1,11 @@
 exports.up = function(knex) {
   return knex.schema.createTable("inventory", i => {
     i.increments("id");
-    i.integer("farmerId")
+    i.integer("farmId")
       .unsigned()
       .notNullable()
       .references("id")
-      .inTable("farmers")
+      .inTable("farms")
       .onDelete("CASCADE")
       .onUpdate("CASCADE");
     i.integer("locationId")
