@@ -12,6 +12,7 @@ exports.up = function(knex) {
     u.string("picture").defaultTo("http://clipart-library.com/img/1325216.png");
     u.string("lat").defaultTo("37.2343");
     u.string("lon").defaultTo("-115.8067");
+    u.boolean("isfarmer").defaultTo(false);
   });
 };
 
