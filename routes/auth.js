@@ -10,38 +10,60 @@ const authware = require('../middleware/auth');
 
 const Users = require('../models/user');
 
+// router.post('/register', async (req, res) => {
+//     const user = req.body;
+
+//     let { value, error } = registerValidation(user);
+
+//     if (error) { 
+//       res.status(422).json({
+//         status: 'error',
+//         message: 'Data validation failed. Check inputs.',
+//         error: error.details
+//     })} else {
+
+//     const hash = bcrypt.hashSync(user.password, 12)
+//     user.password = hash;
+
+//     Users.add(user)
+//         .then(saved => {
+//         res.status(201).json({
+//             status: 'user saved',
+//             message: 'User registered!',
+//             data: saved
+//         });
+//         })
+//         .catch(error => {
+//         res.status(500).json({
+//             status: 'DB add error',
+//             message: 'Failed to add to DB',
+//             error: error
+//         });
+//       });
+//     }
+// });
+
 router.post('/register', async (req, res) => {
-    const user = req.body;
+  const userObj = req.body;
 
-    let { value, error } = registerValidation(user);
+  console.log(userObj);
 
-    if (error) { 
-      res.status(422).json({
-        status: 'error',
-        message: 'Data validation failed. Check inputs.',
-        error: error.details
-    })} else {
-
-    const hash = bcrypt.hashSync(user.password, 12)
-    user.password = hash;
-
-    Users.add(user)
-        .then(saved => {
+  Users.add(userObj)
+      .then(res => {
         res.status(201).json({
-            status: 'user saved',
-            message: 'User registered!',
-            data: saved
-        });
+          status: 'User added to db',
+          message: 'User Registered!',
+          data: res
         })
-        .catch(error => {
+      })
+      .catch(error => {
         res.status(500).json({
-            status: 'DB add error',
-            message: 'Failed to add to DB',
-            error: error
-        });
-      });
-    }
-});
+          status: 'User add failure',
+          message: 'Failed to add user to DB',
+          error: error
+        })
+      })
+})
   
 router.post('/login', (req, res) => {
     let { email, uid } = req.body;
@@ -70,18 +92,18 @@ router.post('/login', (req, res) => {
 });
 
 
-function registerValidation(user) {
-    const schema = Joi.object().keys({
-      'firstName': Joi.string().required(),
-      'lastName': Joi.string().required(),
-      'email': Joi.string().email().required(),
-      'firebaseId': Joi.string().required(),
-      'picture': Joi.string().required(),
-      'lat': Joi.string().required(),
-      'lon': Joi.string().required()
-    })
+// function registerValidation(user) {
+//     const schema = Joi.object().keys({
+//       'firstName': Joi.string().required(),
+//       'lastName': Joi.string().required(),
+//       'email': Joi.string().email().required(),
+//       'firebaseId': Joi.string().required(),
+//       'picture': Joi.string().required(),
+//       'lat': Joi.string().required(),
+//       'lon': Joi.string().required()
+//     })
   
-    return schema.validate(user)
-  }
+//     return schema.validate(user)
+//   }
 
 module.exports = router;
