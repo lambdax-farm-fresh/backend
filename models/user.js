@@ -6,7 +6,8 @@ module.exports = {
   deleteUser,
   find,
   findBy,
-  findById
+  findById,
+  findByEmail
 };
 
 function find() {
@@ -42,4 +43,23 @@ function findById(id) {
   return db('users')
           .where({ id })
           .first();
+}
+
+async function findByEmail(email) {
+  const user = await db('users')
+                      .where({ email })
+                      .first();
+
+  if(user) {
+    const succObj = {
+      status: true,
+      user: user
+    }
+    return succObj
+  } else {
+    const failObj = {
+      status: false
+    }
+    return failObj
+  }
 }
