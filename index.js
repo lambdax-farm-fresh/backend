@@ -9,7 +9,7 @@ const bodyParser = require("body-parser");
 
 var indexRouter = require('./routes/index');
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8181;
 
 // MIDDLEWARE
 app.use(bodyParser.json());
