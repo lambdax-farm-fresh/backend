@@ -5,19 +5,6 @@ const Joi = require('@hapi/joi');
 
 const User = require('../models/user');
 
-
-/* GET user by email */
-router.get('/email/:email', async function(req, res, next) {
-    try {
-        const user = await User.findByEmail(req.params.email);
-        console.log(user)
-        res.json(user);
-        
-    } catch (error) {
-        res.send(error);
-  }
-});
-
 /* GET users listing. */
 router.get('/', async function(req, res, next) {
     try {
@@ -29,6 +16,16 @@ router.get('/', async function(req, res, next) {
         res.send(error);
   }
 });
+
+router.get('/:id', async (req, res) => {
+    try {
+        const user = await User.findById(req.params.id);
+
+        res.json(user)
+    } catch (error) {
+        res.send(error)
+    }
+})
 
 router.put('/:id', async (req, res) => {
     const user = req.body;
