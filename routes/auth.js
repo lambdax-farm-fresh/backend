@@ -13,8 +13,6 @@ const Users = require('../models/user');
 router.post('/register', async (req, res) => {
   const userObj = req.body;
 
-  console.log(userObj);
-
   Users.add(userObj)
       .then(res => {
         res.status(201).json({

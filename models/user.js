@@ -38,8 +38,14 @@ async function deleteUser(id){
     return await db('users').where('id', id).first().del()
 }
 
-function findById(firebaseId) {
-  return db('users')
-          .where({ firebaseId })
-          .first();
+async function findById(firebaseId) {
+  const user = await db('users')
+                .where('firebaseId', firebaseId)
+                .first();
+  
+  if(user) {
+    return user
+  } else {
+    return false
+  }
 }
