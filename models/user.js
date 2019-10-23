@@ -6,12 +6,11 @@ module.exports = {
   deleteUser,
   find,
   findBy,
-  findById,
-  findByEmail
+  findById
 };
 
 function find() {
-  return db('users').select('id', 'firstName', 'lastName', 'email', 'lat', 'lon');
+  return db('users').select('id', 'firstName', 'lastName', 'email', 'lat', 'lon', 'firebaseId');
 }
 
 function findBy(filter) {
@@ -39,27 +38,8 @@ async function deleteUser(id){
     return await db('users').where('id', id).first().del()
 }
 
-function findById(id) {
+function findById(firebaseId) {
   return db('users')
-          .where({ id })
+          .where({ firebaseId })
           .first();
-}
-
-async function findByEmail(email) {
-  const user = await db('users')
-                      .where({ email })
-                      .first();
-
-  if(user) {
-    const succObj = {
-      status: true,
-      user: user
-    }
-    return succObj
-  } else {
-    const failObj = {
-      status: false
-    }
-    return failObj
-  }
 }
