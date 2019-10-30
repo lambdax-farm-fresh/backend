@@ -17,6 +17,21 @@ const Users = require('../models/user');
 const FarmType = require('./types/Farm');
 const Farms = require('../models/farm');
 
+const LocationType = require('./types/Location');
+const Locations = require('../models/location');
+
+const ItemType = require('./types/Item');
+const Items = require('../models/item');
+
+const UnitType = require('./types/Unit');
+const Units = require('../models/unit');
+
+const OrderType = require('./types/Order');
+const Orders = require('../models/order');
+
+const InventoryType = require('./types/Inventory');
+const Inventorys = require('../models/inventory');
+
 //MUTATION
 
 const RootMutationType = new GraphQLObjectType({
