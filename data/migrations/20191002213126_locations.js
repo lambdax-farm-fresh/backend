@@ -1,11 +1,11 @@
 exports.up = function(knex) {
   return knex.schema.createTable("locations", l => {
     l.increments("id");
-    l.integer("userId")
+    l.integer("farmId")
       .unsigned()
       .notNullable()
       .references("id")
-      .inTable("users")
+      .inTable("farms")
       .onDelete("CASCADE")
       .onUpdate("CASCADE");
     l.string("lat").defaultTo("37.2343");

@@ -5,20 +5,20 @@ const {
     GraphQLNonNull
 } = require('graphql');
 
-const UserType = require('./User');
-const Users = require('../../models/user');
+const FarmType = require('./Farm');
+const Farms = require('../../models/farm');
 
 const LocationType = new GraphQLObjectType({
     name: 'Location',
     description: 'A Location in the database',
     fields: () => ({
         id: { type: GraphQLNonNull(GraphQLInt) },
-        userId: { type: GraphQLNonNull(GraphQLInt) },
-        user: {
-            type: UserType,
+        farmId: { type: GraphQLNonNull(GraphQLInt) },
+        farm: {
+            type: FarmType,
             resolve: (location) => {
-                const user = Users.findById(location.id);
-                return user
+                const farm = Farms.findById(location.id);
+                return farm
             }
         },
         lat: { type: GraphQLNonNull(GraphQLString) },

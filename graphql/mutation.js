@@ -109,7 +109,7 @@ const RootMutationType = new GraphQLObjectType({
             type: LocationType,
             description: "Add a location to a farm",
             args: {
-                userId: { type: GraphQLNonNull(GraphQLInt) },
+                farmId: { type: GraphQLNonNull(GraphQLInt) },
                 lat: { type: GraphQLNonNull(GraphQLString) },
                 lon: { type: GraphQLNonNull(GraphQLString) },
                 street1: { type: GraphQLNonNull(GraphQLString) },
