@@ -14,12 +14,16 @@ const {
 const UserType = require('./types/User');
 const Users = require('../models/user');
 
+const FarmType = require('./types/Farm');
+const Farms = require('../models/farm');
+
 //MUTATION
 
 const RootMutationType = new GraphQLObjectType({
     name: 'Mutation',
     description: 'Root Mutation',
     fields: () => ({
+        //USERS
         addUser: {
             type: UserType,
             description: "Add a User",
@@ -37,6 +41,21 @@ const RootMutationType = new GraphQLObjectType({
                     ...args
                 }
                 return Users.add(user)
+            }
+        },
+        //FARMS
+        addFarm: {
+            type: FarmType,
+            description: "Add a Farm",
+            args: {
+                userId: { type: GraphQLNonNull(GraphQLInt) },
+                farmName: { type: GraphQLNonNull(GraphQLString) }
+            },
+            resolve: (parent, args) => {
+                const farm = {
+                    ...args
+                }
+                return Farms.add(farm) 
             }
         }
     })

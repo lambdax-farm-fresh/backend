@@ -32,7 +32,9 @@ const RootQueryType = new GraphQLObjectType({
                 lon: { type: GraphQLString },
                 isfarmer: { type: GraphQLBoolean }
             },
-            resolve: (parent, args) => URLSearchParams.findById(args.id)
+            resolve: async (parent, args) => {
+                return await Users.findBy(user => user.id === args.id)
+            }
         },
         users: {
             type: new GraphQLList(UserType),

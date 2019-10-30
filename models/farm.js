@@ -14,25 +14,25 @@ function find() {
 }
 
 function findBy(filter) {
-  return db('farms').where(filter);
+  return db('farms').where(filter).select('id', 'userId', 'farmName');
 }
 
 async function add(farm) {
   const [id] = await db('farms').insert(farm, "id");
-  const newPost = await db('farms')
+  const newFarm = await db('farms')
           .where({ id })
           .first();
 
-  return newPost;
+  return newFarm;
 }
 
 async function update(farm_id, changes) {
-    await db('farms').where('id', farm_id).first().update(changes);
-    const updPost = await db('farms')
-            .where( 'id', farm_id )
+    await db('farms').where('id', id).first().update(changes);
+    const updFarm = await db('farms')
+            .where( 'id', id )
             .first();
   
-    return updPost;
+    return updFarm;
 }
 
 async function deleteFarm(farm_id){
@@ -41,6 +41,6 @@ async function deleteFarm(farm_id){
 
 function findById(id) {
   return db('farms')
-    .where('farmerId', id)
+    .where('id', id)
     .first();
 }

@@ -17,7 +17,8 @@ const FarmType = new GraphQLObjectType({
         user: {
             type: UserType,
             resolve: (farm) => {
-                return Users.find(user => user.id === farm.userId)
+                const user = Users.findById(farm.id);
+                return user
             }
         },
         farmName: { type: GraphQLNonNull(GraphQLString) }

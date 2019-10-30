@@ -15,9 +15,9 @@ const UserType = new GraphQLObjectType({
         lastName: { type: GraphQLNonNull(GraphQLString) },
         email: { type: GraphQLNonNull(GraphQLString) },
         firebaseId: { type: GraphQLNonNull(GraphQLString) },
-        picture: { type: GraphQLNonNull(GraphQLString) },
-        lat: { type: GraphQLNonNull(GraphQLString) },
-        lon: { type: GraphQLNonNull(GraphQLString) },
+        picture: { type: GraphQLString },
+        lat: { type: GraphQLString },
+        lon: { type: GraphQLString },
         isfarmer: { type: GraphQLNonNull(GraphQLBoolean) }
     })
 })

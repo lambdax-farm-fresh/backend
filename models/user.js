@@ -6,7 +6,8 @@ module.exports = {
   deleteUser,
   find,
   findBy,
-  findById
+  findById,
+  findByFirebaseId
 };
 
 function find() {
@@ -38,9 +39,21 @@ async function deleteUser(id){
     return await db('users').where('id', id).first().del()
 }
 
-async function findById(firebaseId) {
+async function findByFirebaseId(firebaseId) {
   const user = await db('users')
                 .where('firebaseId', firebaseId)
+                .first();
+  
+  if(user) {
+    return user
+  } else {
+    return false
+  }
+}
+
+async function findById(id) {
+  const user = await db('users')
+                .where('id', id)
                 .first();
   
   if(user) {
