@@ -33,7 +33,9 @@ const RootQueryType = new GraphQLObjectType({
                 isfarmer: { type: GraphQLBoolean }
             },
             resolve: async (parent, args) => {
-                return await Users.findBy(user => user.id === args.id)
+                const user = await Users.findByFirebaseId(args.firebaseId);
+                console.log(user);
+                return user
             }
         },
         users: {
@@ -50,7 +52,7 @@ const RootQueryType = new GraphQLObjectType({
                 userId: { type: GraphQLInt },
                 farmName: { type: GraphQLString }
             },
-            resolve: (parent, args) => URLSearchParams.findById(args.id)
+            resolve: (parent, args) => Farms.findById(args.id)
         },
         farms: {
             type: new GraphQLList(FarmType),
