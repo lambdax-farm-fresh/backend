@@ -27,7 +27,7 @@ async function add(farm) {
 }
 
 async function update(farm_id, changes) {
-    await db('farms').where('id', id).first().update(changes);
+    await db('farms').where('id', farm_id).first().update(changes);
     const updFarm = await db('farms')
             .where( 'id', id )
             .first();

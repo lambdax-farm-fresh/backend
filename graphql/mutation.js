@@ -57,6 +57,52 @@ const RootMutationType = new GraphQLObjectType({
                 }
                 return Farms.add(farm) 
             }
+        },
+        updFarm: {
+            type: FarmType,
+            description: "Update a Farm",
+            args: {
+                id: { type: GraphQLNonNull(GraphQLInt) },
+                userId: { type: GraphQLNonNull(GraphQLInt) },
+                farmName: { type: GraphQLNonNull(GraphQLString) }
+            },
+            resolve: (parent, args) => {
+                const farm = {
+                    userId: args.userId,
+                    farmName: args.farmName
+                }
+                return Farms.update(args.id, farm) 
+            }
+        },
+        delFarm: {
+            type: FarmType,
+            description: "Delete a Farm",
+            args: {
+                id: { type: GraphQLNonNull(GraphQLInt) }
+            },
+            resolve: async (parent, args) => {
+                try {
+                    await Farms.deleteFarm(args.id)
+                } catch (err) {
+                    console.log(err);
+                }
+            }
+        },
+
+        //LOCATIONS
+        addLocation: {
+            type: LocationType,
+            description: "Add a location to a farm",
+            args: {
+                userId: { type: GraphQLNonNull(GraphQLInt) },
+                lat: { type: GraphQLNonNull(GraphQLString) },
+                lon: { type: GraphQLNonNull(GraphQLString) },
+                street1: { type: GraphQLNonNull(GraphQLString) },
+                street2: { type: GraphQLNonNull(GraphQLString) },
+                city: { type: GraphQLNonNull(GraphQLString) },
+                state: { type: GraphQLNonNull(GraphQLString) },
+                zip: { type: GraphQLNonNull(GraphQLString) }
+            }
         }
     })
 })
