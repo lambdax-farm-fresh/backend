@@ -14,7 +14,7 @@ function find() {
 }
 
 function findBy(filter) {
-  return db('farms').where(filter).select('id', 'userId', 'farmName');
+  return db('farms').where(filter);
 }
 
 async function add(farm) {

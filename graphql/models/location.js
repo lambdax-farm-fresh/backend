@@ -6,7 +6,8 @@ module.exports = {
   deleteLocation,
   find,
   findBy,
-  findById
+  findById,
+  findByFarmId
 };
 
 function find() {
@@ -15,6 +16,10 @@ function find() {
 
 function findBy(filter) {
   return db('locations').where(filter);
+}
+
+function findByFarmId(farmId) {
+  return db('locations').where('farmId', farmId);
 }
 
 async function add(location) {

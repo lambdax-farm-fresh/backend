@@ -84,7 +84,7 @@ const RootQueryType = new GraphQLObjectType({
             description: 'A location',
             args: {
                 id: { type: GraphQLInt },
-                userId: { type: GraphQLInt },
+                farmId: { type: GraphQLInt },
                 lat: { type: GraphQLString },
                 lon: { type: GraphQLString },
                 street1: { type: GraphQLString },

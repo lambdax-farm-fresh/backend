@@ -5,8 +5,6 @@ const {
     GraphQLNonNull
 } = require('graphql');
 
-const FarmType = require('./Farm');
-const Farms = require('../models/farm');
 
 const LocationType = new GraphQLObjectType({
     name: 'Location',
@@ -14,13 +12,6 @@ const LocationType = new GraphQLObjectType({
     fields: () => ({
         id: { type: GraphQLNonNull(GraphQLInt) },
         farmId: { type: GraphQLNonNull(GraphQLInt) },
-        farm: {
-            type: FarmType,
-            resolve: (location) => {
-                const farm = Farms.findById(location.id);
-                return farm
-            }
-        },
         lat: { type: GraphQLNonNull(GraphQLString) },
         lon: { type: GraphQLNonNull(GraphQLString) },
         streetNumber: { type: GraphQLNonNull(GraphQLString) },
