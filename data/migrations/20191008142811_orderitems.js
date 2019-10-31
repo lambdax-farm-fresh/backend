@@ -2,7 +2,7 @@
 exports.up = function(knex) {
     return knex.schema.createTable("orderitems", u => {
         u.increments('id')
-        u.integer("itemId")
+        u.integer("inventoryId")
             .unsigned()
             .notNullable()
             .references("id")
@@ -16,6 +16,7 @@ exports.up = function(knex) {
             .inTable("orders")
             .onDelete("CASCADE")
             .onUpdate("CASCADE");
+        u.decimal('quantityPurchased').notNullable();
       });
 };
 
