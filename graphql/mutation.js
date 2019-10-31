@@ -126,6 +126,48 @@ const RootMutationType = new GraphQLObjectType({
                 return Locations.add(location)
             }
         },
+        updLocation: {
+            type: LocationType,
+            description: "Update a Location",
+            args: {
+                id: { type: GraphQLNonNull(GraphQLInt) },
+                farmId: { type: GraphQLNonNull(GraphQLInt) },
+                lat: { type: GraphQLNonNull(GraphQLString) },
+                lon: { type: GraphQLNonNull(GraphQLString) },
+                street1: { type: GraphQLNonNull(GraphQLString) },
+                street2: { type: GraphQLNonNull(GraphQLString) },
+                city: { type: GraphQLNonNull(GraphQLString) },
+                state: { type: GraphQLNonNull(GraphQLString) },
+                zip: { type: GraphQLNonNull(GraphQLString) }
+            },
+            resolve: (parent, args) => {
+                const location = {
+                    farmId: args.farmId,
+                    lat: args.lat,
+                    lon: args.lon,
+                    street1: args.street1,
+                    street2: args.street2,
+                    city: args.city,
+                    state: args.state,
+                    zip: args.zip
+                }
+                return Locations.update(args.id, location) 
+            }
+        },
+        delLocation: {
+            type: LocationType,
+            description: "Delete a Location",
+            args: {
+                id: { type: GraphQLNonNull(GraphQLInt) }
+            },
+            resolve: async (parent, args) => {
+                try {
+                    await Locations.deleteLocation(args.id)
+                } catch (err) {
+                    console.log(err);
+                }
+            }
+        },
 
         //ITEMS
         addItem: {
@@ -142,6 +184,36 @@ const RootMutationType = new GraphQLObjectType({
                 return Items.add(item)
             }
         },
+        updItem: {
+            type: ItemType,
+            description: "Update a Item",
+            args: {
+                id: { type: GraphQLNonNull(GraphQLInt) },
+                name: { type: GraphQLNonNull(GraphQLString) },
+                vareity: { type: GraphQLNonNull(GraphQLString) }
+            },
+            resolve: (parent, args) => {
+                const item = {
+                    name: args.name,
+                    vareity: args.vareity
+                }
+                return Items.update(args.id, item) 
+            }
+        },
+        delItem: {
+            type: ItemType,
+            description: "Delete an Item",
+            args: {
+                id: { type: GraphQLNonNull(GraphQLInt) }
+            },
+            resolve: async (parent, args) => {
+                try {
+                    await Items.deleteItem(args.id)
+                } catch (err) {
+                    console.log(err);
+                }
+            }
+        },
 
         //UNIT
         addUnit: {
@@ -155,6 +227,34 @@ const RootMutationType = new GraphQLObjectType({
                     ...args
                 }
                 return Units.add(unit)
+            }
+        },
+        updUnit: {
+            type: UnitType,
+            description: "Update a Unit",
+            args: {
+                id: { type: GraphQLNonNull(GraphQLInt) },
+                unit: { type: GraphQLNonNull(GraphQLString) }
+            },
+            resolve: (parent, args) => {
+                const unit = {
+                    unit: args.unit
+                }
+                return Units.update(args.id, unit) 
+            }
+        },
+        delUnit: {
+            type: UnitType,
+            description: "Delete a Unit",
+            args: {
+                id: { type: GraphQLNonNull(GraphQLInt) }
+            },
+            resolve: async (parent, args) => {
+                try {
+                    await Units.deleteUnit(args.id)
+                } catch (err) {
+                    console.log(err);
+                }
             }
         },
 
@@ -178,6 +278,45 @@ const RootMutationType = new GraphQLObjectType({
                 return Inventorys.add(inventory)
             }
         },
+        updInventory: {
+            type: InventoryType,
+            description: "Update an Inventory",
+            args: {
+                farmId: { type: GraphQLNonNull(GraphQLInt) },
+                locationId: { type: GraphQLNonNull(GraphQLInt) },
+                itemId: { type: GraphQLNonNull(GraphQLInt) },
+                unitId: { type: GraphQLNonNull(GraphQLInt) },
+                quantity: { type: GraphQLNonNull(GraphQLFloat) },
+                price: { type: GraphQLNonNull(GraphQLFloat) },
+                description: { type: GraphQLNonNull(GraphQLString) } 
+            },
+            resolve: (parent, args) => {
+                const inventory = {
+                    farmId: args.farmId,
+                    locationId: args.locationId,
+                    itemId: args.itemId,
+                    unitId: args.unitId,
+                    quantity: args.quantity,
+                    price: args.price,
+                    description: args.description
+                }
+                return Inventorys.update(args.id, inventory) 
+            }
+        },
+        delInventory: {
+            type: InventoryType,
+            description: "Delete an Inventory",
+            args: {
+                id: { type: GraphQLNonNull(GraphQLInt) }
+            },
+            resolve: async (parent, args) => {
+                try {
+                    await Inventorys.deleteInventory(args.id)
+                } catch (err) {
+                    console.log(err);
+                }
+            }
+        },
 
         //ORDER
         addOrder: {
@@ -194,7 +333,39 @@ const RootMutationType = new GraphQLObjectType({
                 }
                 return Orders.add(order)
             }
-        }
+        },
+        updOrder: {
+            type: OrderType,
+            description: "Update a Order",
+            args: {
+                id: { type: GraphQLNonNull(GraphQLInt) },
+                farmId: { type: GraphQLNonNull(GraphQLInt) },
+                userId: { type: GraphQLNonNull(GraphQLInt) },
+                date: { type: GraphQLString }
+            },
+            resolve: (parent, args) => {
+                const order = {
+                    farmId: args.farmId,
+                    userId: args.userId,
+                    date: args.date
+                }
+                return Orders.update(args.id, order) 
+            }
+        },
+        delOrder: {
+            type: OrderType,
+            description: "Delete a Order",
+            args: {
+                id: { type: GraphQLNonNull(GraphQLInt) }
+            },
+            resolve: async (parent, args) => {
+                try {
+                    await Orders.deleteOrder(args.id)
+                } catch (err) {
+                    console.log(err);
+                }
+            }
+        },
     })
 })
 

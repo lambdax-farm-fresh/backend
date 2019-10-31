@@ -19,20 +19,20 @@ function findBy(filter) {
 
 async function add(item) {
   const [id] = await db('items').insert(item, "id");
-  const newPost = await db('items')
+  const newItem = await db('items')
           .where({ id })
           .first();
 
-  return newPost;
+  return newItem;
 }
 
 async function update(item_id, changes) {
     await db('items').where('id', item_id).first().update(changes);
-    const updPost = await db('items')
+    const updItem = await db('items')
             .where( 'id', item_id )
             .first();
   
-    return updPost;
+    return updItem;
 }
 
 async function deleteItem(item_id){

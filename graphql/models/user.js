@@ -28,11 +28,11 @@ async function add(post) {
 
 async function update(user_id, changes) {
     await db('users').where('id', user_id).first().update(changes);
-    const updPost = await db('users')
+    const updUser = await db('users')
                             .where( 'id', user_id )
                             .first();
   
-    return updPost;
+    return updUser;
 }
 
 async function deleteUser(id){

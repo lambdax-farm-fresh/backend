@@ -3,7 +3,7 @@ const db = require('../../data/dbConfig');
 module.exports = {
   add,
   update,
-  deleteItem,
+  deleteUnit,
   find,
   findBy,
   findById
@@ -35,7 +35,7 @@ async function update(unit_id, changes) {
     return updUnit;
 }
 
-async function deleteItem(unit_id){
+async function deleteUnit(unit_id){
     return await db('units').where('id', unit_id).first().del()
 }
 

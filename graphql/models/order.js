@@ -1,5 +1,3 @@
-// THIS MODEL WILL NEED UPDATES TO INTERFACE WITH ORDERITEMS TABLE
-
 const db = require('../../data/dbConfig');
 
 module.exports = {
@@ -31,11 +29,11 @@ async function add(order) {
 
 async function update(order_id, changes) {
     await db('orders').where('id', order_id).first().update(changes);
-    const updPost = await db('orders')
+    const updOrder = await db('orders')
             .where( 'id', order_id )
             .first();
   
-    return updPost;
+    return updOrder;
 }
 
 async function deleteorder(order_id){
