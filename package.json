@@ -25,19 +25,19 @@
     "bcrypt": "^3.0.6",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
-    "dotenv": "^8.1.0",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-graphql": "^0.9.0",
     "faker": "^4.1.0",
     "graphql": "^14.5.8",
     "jsonwebtoken": "^8.5.1",
-    "knex": "^0.19.5",
+    "knex": "^0.20.1",
     "pg": "^7.12.1",
     "sqlite3": "^4.1.0"
   },
   "devDependencies": {
     "jest": "^24.9.0",
-    "nodemon": "^1.19.3",
+    "nodemon": "^1.19.4",
     "supertest": "^4.0.2"
   },
   "jest": {
