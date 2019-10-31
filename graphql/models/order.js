@@ -1,6 +1,6 @@
 // THIS MODEL WILL NEED UPDATES TO INTERFACE WITH ORDERITEMS TABLE
 
-const db = require('../data/dbConfig');
+const db = require('../../data/dbConfig');
 
 module.exports = {
   add,
@@ -8,7 +8,8 @@ module.exports = {
   deleteorder,
   find,
   findBy,
-  findById
+  findById,
+  populateItems
 };
 
 function find() {
@@ -45,4 +46,8 @@ function findById(id) {
   return db('orders')
     .where('orderId', id)
     .first();
+}
+
+async function populateItems(itemlist) {
+
 }

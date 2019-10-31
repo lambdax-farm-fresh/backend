@@ -6,10 +6,10 @@ const {
 } = require('graphql');
 
 const UserType = require('./User');
-const Users = require('../../models/user');
+const Users = require('../models/user');
 
 const FarmType = require('./Farm');
-const Farms = require('../../models/farm');
+const Farms = require('../models/farm');
 
 const OrderType = new GraphQLObjectType({
     name: 'Order',

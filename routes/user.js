@@ -3,7 +3,7 @@ var router = express.Router();
 
 const Joi = require('@hapi/joi');
 
-const User = require('../models/user');
+const User = require('../graphql/models/user');
 
 /* GET users listing. */
 router.get('/', async function(req, res, next) {

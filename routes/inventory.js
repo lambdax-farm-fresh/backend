@@ -3,7 +3,7 @@ var router = express.Router();
 
 const Joi = require('@hapi/joi');
 
-const Inventories = require('../models/inventory');
+const Inventories = require('../graphql/models/inventory');
 
 router.get('/:id', async function(req, res, next) {
     try {

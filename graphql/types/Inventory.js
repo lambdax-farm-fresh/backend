@@ -7,19 +7,19 @@ const {
 } = require('graphql');
 
 const UserType = require('./User');
-const Users = require('../../models/user');
+const Users = require('../models/user');
 
 const FarmType = require('./Farm');
-const Farms = require('../../models/farm');
+const Farms = require('../models/farm');
 
 const LocationType = require('./Location');
-const Locations = require('../../models/location');
+const Locations = require('../models/location');
 
 const ItemType = require('./Item');
-const Items = require('../../models/item');
+const Items = require('../models/item');
 
 const UnitType = require('./Unit');
-const Units = require('../../models/unit');
+const Units = require('../models/unit');
 
 const InventoryType = new GraphQLObjectType({
     name: 'Inventory',

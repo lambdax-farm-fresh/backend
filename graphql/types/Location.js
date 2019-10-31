@@ -6,7 +6,7 @@ const {
 } = require('graphql');
 
 const FarmType = require('./Farm');
-const Farms = require('../../models/farm');
+const Farms = require('../models/farm');
 
 const LocationType = new GraphQLObjectType({
     name: 'Location',
