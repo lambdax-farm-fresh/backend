@@ -6,6 +6,7 @@ const {
     GraphQLBoolean,
     GraphQLString,
     GraphQLInt,
+    GraphQLFloat,
     GraphQLNonNull
 } = require('graphql');
 
@@ -117,6 +118,81 @@ const RootMutationType = new GraphQLObjectType({
                 city: { type: GraphQLNonNull(GraphQLString) },
                 state: { type: GraphQLNonNull(GraphQLString) },
                 zip: { type: GraphQLNonNull(GraphQLString) }
+            },
+            resolve: (parent, args) => {
+                const location = {
+                    ...args
+                }
+                return Locations.add(location)
+            }
+        },
+
+        //ITEMS
+        addItem: {
+            type: ItemType,
+            description: "Add an Item classifier",
+            args: {
+                name: { type: GraphQLNonNull(GraphQLString) },
+                vareity: { type: GraphQLNonNull(GraphQLString) }
+            },
+            resolve: (parent, args) => {
+                const item = {
+                    ...args
+                }
+                return Items.add(item)
+            }
+        },
+
+        //UNIT
+        addUnit: {
+            type: UnitType,
+            description: "Add an Unit classifier",
+            args: {
+                unit: { type: GraphQLNonNull(GraphQLString) }
+            },
+            resolve: (parent, args) => {
+                const unit = {
+                    ...args
+                }
+                return Units.add(unit)
+            }
+        },
+
+        //INVENTORY
+        addInventory: {
+            type: InventoryType,
+            description: "Add an Inventory",
+            args: {
+                farmId: { type: GraphQLNonNull(GraphQLInt) },
+                locationId: { type: GraphQLNonNull(GraphQLInt) },
+                itemId: { type: GraphQLNonNull(GraphQLInt) },
+                unitId: { type: GraphQLNonNull(GraphQLInt) },
+                quantity: { type: GraphQLNonNull(GraphQLFloat) },
+                price: { type: GraphQLNonNull(GraphQLFloat) },
+                description: { type: GraphQLNonNull(GraphQLString) } 
+            },
+            resolve: (parent, args) => {
+                const inventory = {
+                    ...args
+                }
+                return Inventorys.add(inventory)
+            }
+        },
+
+        //ORDER
+        addOrder: {
+            type: OrderType,
+            description: "Add an Order",
+            args: {
+                farmId: { type: GraphQLNonNull(GraphQLInt) },
+                userId: { type: GraphQLNonNull(GraphQLInt) },
+                date: { type: GraphQLString }
+            },
+            resolve: (parent, args) => {
+                const order = {
+                    ...args
+                }
+                return Orders.add(order)
             }
         }
     })

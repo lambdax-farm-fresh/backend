@@ -10,7 +10,7 @@ const ItemType = new GraphQLObjectType({
     description: 'A Item in the database',
     fields: () => ({
         id: { type: GraphQLNonNull(GraphQLInt) },
-        type: { type: GraphQLNonNull(GraphQLString) },
+        name: { type: GraphQLNonNull(GraphQLString) },
         variety: { type: GraphQLNonNull(GraphQLString) }
     })
 })

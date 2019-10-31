@@ -1,7 +1,7 @@
 exports.up = function(knex) {
   return knex.schema.createTable("items", i => {
     i.increments("id");
-    i.string("type").notNullable();
+    i.string("name").notNullable();
     i.string("variety").notNullable();
   });
 };

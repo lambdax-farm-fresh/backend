@@ -10,7 +10,7 @@ module.exports = {
 };
 
 function find() {
-  return db('inventories').select('inventoryId', 'farmerId', 'locationId', 'itemId', 'unitId', 'quantity', 'price', 'description');
+  return db('inventories').select('id', 'farmerId', 'locationId', 'itemId', 'unitId', 'quantity', 'price', 'description');
 }
 
 function findBy(filter) {
