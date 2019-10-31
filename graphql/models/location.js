@@ -10,7 +10,7 @@ module.exports = {
 };
 
 function find() {
-  return db('locations').select('id', 'farmId', 'lat', 'lon', 'street1', 'street2', 'city', 'state', 'zip');
+  return db('locations').select('id', 'farmId', 'lat', 'lon', 'streetNumber', 'streetName', 'city', 'state', 'countryCode', 'zip');
 }
 
 function findBy(filter) {

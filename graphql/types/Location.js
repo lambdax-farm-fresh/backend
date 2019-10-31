@@ -23,10 +23,11 @@ const LocationType = new GraphQLObjectType({
         },
         lat: { type: GraphQLNonNull(GraphQLString) },
         lon: { type: GraphQLNonNull(GraphQLString) },
-        street1: { type: GraphQLNonNull(GraphQLString) },
-        street2: { type: GraphQLNonNull(GraphQLString) },
+        streetNumber: { type: GraphQLNonNull(GraphQLString) },
+        streetName: { type: GraphQLNonNull(GraphQLString) },
         city: { type: GraphQLNonNull(GraphQLString) },
         state: { type: GraphQLNonNull(GraphQLString) },
+        countryCode: { type: GraphQLNonNull(GraphQLString) },
         zip: { type: GraphQLNonNull(GraphQLString) }
     })
 })

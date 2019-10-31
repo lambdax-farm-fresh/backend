@@ -10,10 +10,11 @@ exports.up = function(knex) {
       .onUpdate("CASCADE");
     l.string("lat").defaultTo("37.2343");
     l.string("lon").defaultTo("-115.8067");
-    l.string("street1").notNullable();
-    l.string("street2").notNullable();
+    l.string("streetNumber").notNullable();
+    l.string("streetName").notNullable();
     l.string("city").notNullable();
     l.string("state").notNullable();
+    l.string("countryCode").notNullable();
     l.string("zip").notNullable();
   });
 };

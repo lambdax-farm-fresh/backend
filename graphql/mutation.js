@@ -113,10 +113,11 @@ const RootMutationType = new GraphQLObjectType({
                 farmId: { type: GraphQLNonNull(GraphQLInt) },
                 lat: { type: GraphQLNonNull(GraphQLString) },
                 lon: { type: GraphQLNonNull(GraphQLString) },
-                street1: { type: GraphQLNonNull(GraphQLString) },
-                street2: { type: GraphQLNonNull(GraphQLString) },
+                streetNumber: { type: GraphQLNonNull(GraphQLString) },
+                streetName: { type: GraphQLNonNull(GraphQLString) },
                 city: { type: GraphQLNonNull(GraphQLString) },
                 state: { type: GraphQLNonNull(GraphQLString) },
+                countryCode: { type: GraphQLNonNull(GraphQLString) },
                 zip: { type: GraphQLNonNull(GraphQLString) }
             },
             resolve: (parent, args) => {
@@ -134,10 +135,11 @@ const RootMutationType = new GraphQLObjectType({
                 farmId: { type: GraphQLNonNull(GraphQLInt) },
                 lat: { type: GraphQLNonNull(GraphQLString) },
                 lon: { type: GraphQLNonNull(GraphQLString) },
-                street1: { type: GraphQLNonNull(GraphQLString) },
-                street2: { type: GraphQLNonNull(GraphQLString) },
+                streetNumber: { type: GraphQLNonNull(GraphQLString) },
+                streetName: { type: GraphQLNonNull(GraphQLString) },
                 city: { type: GraphQLNonNull(GraphQLString) },
                 state: { type: GraphQLNonNull(GraphQLString) },
+                countryCode: { type: GraphQLNonNull(GraphQLString) },
                 zip: { type: GraphQLNonNull(GraphQLString) }
             },
             resolve: (parent, args) => {
@@ -149,6 +151,7 @@ const RootMutationType = new GraphQLObjectType({
                     street2: args.street2,
                     city: args.city,
                     state: args.state,
+                    countryCode: args.countryCode,
                     zip: args.zip
                 }
                 return Locations.update(args.id, location) 
