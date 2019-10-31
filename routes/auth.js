@@ -8,7 +8,7 @@ const bcrypt = require('bcrypt');
 
 const authware = require('../middleware/auth');
 
-const Users = require('../models/user');
+const Users = require('../graphql/models/user');
 
 router.post('/register', async (req, res) => {
   const userObj = req.body;
