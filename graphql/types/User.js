@@ -18,7 +18,7 @@ const UserType = new GraphQLObjectType({
     picture: { type: GraphQLString },
     lat: { type: GraphQLString },
     lon: { type: GraphQLString },
-    isfarmer: { type: GraphQLNonNull(GraphQLBoolean) }
+    rankrole: { type: GraphQLNonNull(GraphQLString) }
   })
 });
 
