@@ -27,7 +27,11 @@ app.use(cors());
 
 //Routes
 
-app.use('/', indexRouter);
+// app.use('/', indexRouter);
+
+app.use('/', expressQl({
+  schema: schema
+}))
 
 app.use('/graphQl', expressQl({
   schema: schema,
