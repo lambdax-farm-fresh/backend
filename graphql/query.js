@@ -47,7 +47,7 @@ const RootQueryType = new GraphQLObjectType({
         picture: { type: GraphQLString },
         lat: { type: GraphQLString },
         lon: { type: GraphQLString },
-        isfarmer: { type: GraphQLBoolean }
+        rankrole: { type: GraphQLString }
       },
       resolve: async (parent, args) => {
         const user = await Users.findByFirebaseId(args.firebaseId);

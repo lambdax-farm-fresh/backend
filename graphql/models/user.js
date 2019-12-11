@@ -19,7 +19,7 @@ function find() {
     "lat",
     "lon",
     "firebaseId",
-    "isfarmer"
+    "rankrole"
   );
 }
 

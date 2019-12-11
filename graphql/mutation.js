@@ -89,6 +89,23 @@ const RootMutationType = new GraphQLObjectType({
         }
       }
     },
+    makeFarmer: {
+      type: UserType,
+      description: "Make a User have Farmer access",
+      args: {
+        id: { type: GraphQLNonNull(GraphQLInt) }
+      },
+      resolve: async (parent, args) => {
+        try {
+          const changes = {
+            rankrole: "farmer"
+          }
+          await Users.update(args.id, changes)
+        } catch (err) {
+          console.log(err)
+        }
+      }
+    },
 
     //FARMS
     addFarm: {

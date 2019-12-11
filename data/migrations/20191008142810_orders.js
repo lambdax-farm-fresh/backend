@@ -9,13 +9,6 @@ exports.up = function(knex) {
             .inTable("users")
             .onDelete("CASCADE")
             .onUpdate("CASCADE");
-        u.integer("farmId")
-            .unsigned()
-            .notNullable()
-            .references("id")
-            .inTable("farms")
-            .onDelete("CASCADE")
-            .onUpdate("CASCADE");
         u.date("date");
       });
 };
