@@ -9,8 +9,14 @@ module.exports = {
   findById
 };
 
-function find() {
-  return db("farms").select("id", "userId", "farmName");
+function find(userId = -1) {
+  if(userId === -1) {
+    return db("farms").select("id", "userId", "farmName");
+  } else {
+    return db("farms")
+    .where("userId", userId)
+    .select("id", "userId", "farmName");
+  }
 }
 
 function findBy(filter) {
