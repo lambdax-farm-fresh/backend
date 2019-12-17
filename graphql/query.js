@@ -73,7 +73,10 @@ const RootQueryType = new GraphQLObjectType({
     farms: {
       type: new GraphQLList(FarmType),
       description: "List of all Farms",
-      resolve: () => Farms.find()
+      args: {
+        userId: { type: GraphQLInt }
+      },
+      resolve: (parent, args) => Farms.find(args.userId)
     },
 
     location: {
