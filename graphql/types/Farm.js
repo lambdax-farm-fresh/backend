@@ -29,7 +29,6 @@ const FarmType = new GraphQLObjectType({
       type: new GraphQLList(LocationType),
       resolve: farm => {
         const locations = Locations.findByFarmId(farm.id);
-        console.log(farm.id);
         return locations;
       }
     },
