@@ -100,7 +100,7 @@ const RootMutationType = new GraphQLObjectType({
           const changes = {
             rankrole: "farmer"
           }
-          await Users.update(args.id, changes)
+          return await Users.update(args.id, changes)
         } catch (err) {
           console.log(err)
         }
