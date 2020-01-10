@@ -108,7 +108,8 @@ const RootQueryType = new GraphQLObjectType({
         id: { type: GraphQLInt },
         type: { type: GraphQLString },
         variety: { type: GraphQLString }
-      }
+      },
+      resolve: (parent, args) => Items.findById(args.id)
     },
     items: {
       type: GraphQLList(ItemType),
@@ -128,7 +129,8 @@ const RootQueryType = new GraphQLObjectType({
         quantity: { type: GraphQLFloat },
         price: { type: GraphQLFloat },
         description: { type: GraphQLString }
-      }
+      },
+      resolve: (parent, args) => Inventorys.findById(args.id)
     },
     inventories: {
       type: GraphQLList(InventoryType),
@@ -142,7 +144,8 @@ const RootQueryType = new GraphQLObjectType({
       args: {
         id: { type: GraphQLInt },
         unit: { type: GraphQLString }
-      }
+      },
+      resolve: (parent, args) => Units.findById(args.id)
     },
     units: {
       type: GraphQLList(UnitType),
@@ -158,7 +161,8 @@ const RootQueryType = new GraphQLObjectType({
         userId: { type: GraphQLInt },
         farmId: { type: GraphQLInt },
         date: { type: GraphQLString }
-      }
+      },
+      resolve: (parent, args) => Orders.findById(args.id)
     },
     orders: {
       type: GraphQLList(OrderType),
