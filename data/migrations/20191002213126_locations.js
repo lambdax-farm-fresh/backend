@@ -1,6 +1,8 @@
 exports.up = function(knex) {
   return knex.schema.createTable("locations", l => {
-    l.increments("id");
+    l.string("id")
+      .primary()
+      .notNullable();
     l.integer("farmId")
       .unsigned()
       .notNullable()

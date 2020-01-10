@@ -92,7 +92,8 @@ const RootQueryType = new GraphQLObjectType({
         city: { type: GraphQLString },
         state: { type: GraphQLString },
         zip: { type: GraphQLString }
-      }
+      },
+      resolve: (parent, args) => Locations.findById(args.id)
     },
     locations: {
       type: new GraphQLList(LocationType),

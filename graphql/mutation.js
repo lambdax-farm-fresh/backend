@@ -158,6 +158,7 @@ const RootMutationType = new GraphQLObjectType({
       type: LocationType,
       description: "Add a location to a farm",
       args: {
+        id: { type: GraphQLNonNull(GraphQLString) },
         farmId: { type: GraphQLNonNull(GraphQLInt) },
         lat: { type: GraphQLNonNull(GraphQLString) },
         lon: { type: GraphQLNonNull(GraphQLString) },
@@ -179,7 +180,7 @@ const RootMutationType = new GraphQLObjectType({
       type: LocationType,
       description: "Update a Location",
       args: {
-        id: { type: GraphQLNonNull(GraphQLInt) },
+        id: { type: GraphQLNonNull(GraphQLString) },
         farmId: { type: GraphQLInt },
         lat: { type: GraphQLString },
         lon: { type: GraphQLString },
@@ -201,7 +202,7 @@ const RootMutationType = new GraphQLObjectType({
       type: LocationType,
       description: "Delete a Location",
       args: {
-        id: { type: GraphQLNonNull(GraphQLInt) }
+        id: { type: GraphQLNonNull(GraphQLString) },
       },
       resolve: async (parent, args) => {
         try {
