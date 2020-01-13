@@ -8,8 +8,7 @@ exports.up = function(knex) {
       .inTable("farms")
       .onDelete("CASCADE")
       .onUpdate("CASCADE");
-    i.integer("locationId")
-      .unsigned()
+    i.string("locationId")
       .notNullable()
       .references("id")
       .inTable("locations")

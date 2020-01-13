@@ -34,7 +34,7 @@ const InventoryType = new GraphQLObjectType({
         return farm;
       }
     },
-    locationId: { type: GraphQLNonNull(GraphQLInt) },
+    locationId: { type: GraphQLNonNull(GraphQLString) },
     location: {
       type: LocationType,
       resolve: inventory => {
