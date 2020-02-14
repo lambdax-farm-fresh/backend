@@ -1,16 +1,17 @@
 module.exports = {
   development: {
-    client: "sqlite3",
-    connection: {
-      filename: "./data/farmfreshdev.sqlite3"
+    client: "pg",
+    connection: "postgres://farmfresh:farmfreshdev@localhost:5432/farmfreshDevDB",
+    pool: {
+      min: 2,
+      max: 10
     },
     migrations: {
       directory: "./data/migrations"
     },
     seeds: {
       directory: "./data/seeds"
-    },
-    useNullAsDefault: true
+    }
   },
 
   staging: {
